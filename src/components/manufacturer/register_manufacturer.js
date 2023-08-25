@@ -65,7 +65,7 @@ const RegisterManufacturer = () => {
                   border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                 "/>
               </label>
-              <button className='rounded-md mt-4 join' onClick={() => {navigate('/loginman')}}>Sign Up</button>
+              <button className='rounded-md mt-4 join' onClick={() => {navigate('/')}}>Sign Up</button>
             </form>
             <footer className='reg-footer w-100 text-center mt-[100px]'>© copyright 2023 Digi</footer>
         </main>
