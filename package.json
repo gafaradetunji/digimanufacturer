@@ -1,7 +1,6 @@
 {
   "name": "digi",
   "version": "0.1.0",
-  "homepage": "/loginman",
   "private": true,
   "dependencies": {
     "@craco/craco": "^7.1.0",
