@@ -15,12 +15,12 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/manufacturerProduct" element={<ManufacutrerProduct />} />
-      <Route path="/editmanufacturer" element={<EditManufacturerProduct />} />
-      <Route path="/shipping" element={<ShippingPrice />} />
-          <Route path="/policies" element={<Policies />} />
+        <Route path="/" element={<LoginManufacturer />} />
+        <Route path="/manufacturerProduct" element={<ManufacutrerProduct />} />
+        <Route path="/editmanufacturer" element={<EditManufacturerProduct />} />
+        <Route path="/shipping" element={<ShippingPrice />} />
+        <Route path="/policies" element={<Policies />} />
         <Route path='registerman' element={<RegisterManufacturer />} />
-        <Route path="/loginman" element={<LoginManufacturer />} />
         <Route path="/company" element={<Company />} />
         <Route path="/addition" element={<Additional />} />
       </Routes>

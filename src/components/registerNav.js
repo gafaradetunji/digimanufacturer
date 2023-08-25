@@ -15,7 +15,7 @@ const RegisterNav = () => {
                                     <li className='nav-item'><Link className={`nav-link nav-nav`} to={`/registerman`}>Be a manufacutrer</Link></li>
                                     <li className='nav-item'><Link className={`nav-link nav-nav`} to='#top'>X-Services</Link></li>
                                     <li className='nav-item'><Link className={`nav-link nav-nav`} to='#top'>Contact Us</Link></li>
-                                    <li className='nav-item'><Link className={`nav-link nav-nav`} to={`/loginman`}>Log In</Link></li>
+                                    <li className='nav-item'><Link className={`nav-link nav-nav`} to={`/`}>Log In</Link></li>
                                 </ul>
                             </div>
                             <div className='auth mobile-nav'>

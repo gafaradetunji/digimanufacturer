@@ -4,7 +4,7 @@ const RegisterMobileNav = () => {
         <nav className='navbar navbar-expand-lg register-desk'>
             <div className='register container-fluid'>
                 <p className='finance'>
-                  <Link to={`/loginman`} className='navbar-brand a-register'>
+                  <Link to={`/`} className='navbar-brand a-register'>
                       <span className='dig'>Digi</span>
                       <img src={require('../images/logo2.jpg')} alt='' className='img-register'/>
                   </Link>

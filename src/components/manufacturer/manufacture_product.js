@@ -23,7 +23,7 @@ const ManufacutrerProduct = () => {
         <main className='relative h-[1200px] manpro'>
             <div className=''>
                 <div className='mobile-elect d-flex align-items-center'>
-                    <Link to={`/loginman`} className='mob-anch flex h-[20px] mt-4 ml-4 justify-between w-[120px] text-black no-underline'>
+                    <Link to={`/`} className='mob-anch flex h-[20px] mt-4 ml-4 justify-between w-[120px] text-black no-underline'>
                         <img src={require('../../images/back-track.jpg')} alt='' className=''/>
                         <p className='font-normal'>My Products</p>
                     </Link>
