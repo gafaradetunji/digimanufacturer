@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/loginman/static/css/main.a719f006.css",
+    "main.js": "/loginman/static/js/main.c8db9d44.js",
+    "static/js/787.7815d080.chunk.js": "/loginman/static/js/787.7815d080.chunk.js",
+    "static/media/home-back.svg": "/loginman/static/media/home-back.fb4018829999d7c77f6d.svg",
+    "static/media/Satoshi-Variable.ttf": "/loginman/static/media/Satoshi-Variable.536fda9b164542087fc7.ttf",
+    "static/media/Satoshi-Variable.woff2": "/loginman/static/media/Satoshi-Variable.353a66cdd8922bb63107.woff2",
+    "static/media/Satoshi-Variable.woff": "/loginman/static/media/Satoshi-Variable.4db206aaad2132de9db7.woff",
+    "index.html": "/loginman/index.html",
+    "main.a719f006.css.map": "/loginman/static/css/main.a719f006.css.map",
+    "main.c8db9d44.js.map": "/loginman/static/js/main.c8db9d44.js.map",
+    "787.7815d080.chunk.js.map": "/loginman/static/js/787.7815d080.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a719f006.css",
+    "static/js/main.c8db9d44.js"
+  ]
+}

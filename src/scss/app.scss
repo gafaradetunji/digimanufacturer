@@ -1,0 +1,2490 @@
+@import"../../node_modules/bootstrap/scss/bootstrap";
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('../fonts/Satoshi-Variable.woff2') format('woff2'),
+       url('../fonts/Satoshi-Variable.woff') format('woff'),
+       url('../fonts/Satoshi-Variable.ttf') format('truetype');
+       font-weight: 300 900;
+       font-display: swap;
+       font-style: normal;
+}
+$primary-color: #DF0000;
+$secondary-color: #DF000052;
+$black: #030303;
+$white: #FAF9F9;
+$home-background: #E0E0E0;
+$grey: #C1C1C1;
+$search: #F4F4F4;
+$indicator: #666481;
+$footer-background: #06060B;
+$footer-mobile: #1E1E23;
+$footer-grey: #38383C;
+$forgot-text: #2D2B4A;
+$mobile-input: #7C7C7C;
+$toggler-button: #292D32;
+$mini-card: #E6E6E7;
+$color-dark: #1C1C1C;
+$date-color: #606060;
+$manu-button: #e4e4e4;
+
+
+@media (min-width: 1025px) {
+    html, body{
+        font-family: Satoshi, sans-serif !important;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        overflow-x: hidden;
+        .mobile-form, .ruby, .register-desk{
+            display: none !important;
+        }
+        .manpro{
+            .overflow::-webkit-scrollbar{
+                width: 0;
+            }
+            .overflow{
+                scrollbar-width: none;
+            }
+        }
+        .nav-mobile{
+            .mobile-cart{
+                display: none;
+            }
+        }
+            .logo{
+                h1{
+                    font-size: 20px;
+                }
+            }
+            .search{
+                font-size: 14px;
+                background: $search;
+                border-radius: 13px;
+                color:$black;
+                width: 400px;
+                .search-icon{
+                    margin-left: 15px;
+                }
+                input{
+                    background: none;
+                    outline: none;
+                    border: 0;
+                    margin-left: 10px;
+                    width:80%;
+                    border-right: 1px solid $black;
+                }
+                input::placeholder{
+                    padding: 10px;
+                    color: $black;
+                }
+                .icon-div{
+                    width: 300px;
+                    .anywhere{
+                        margin: 10px 15px;
+                    }
+                }
+                
+            }
+                .ul-nav{
+                    li{
+                        list-style: none;
+                        .nav-link{
+                            text-decoration: none;
+                            color: $black;
+                            margin-right: 15px;
+                            font-size: 14px;
+                        }
+                        .nav-link:hover, .active{
+                            color: $primary-color;
+                            text-decoration: underline;
+                        }
+                    }
+        }
+        .auth-user{
+            // height: 40px;
+            padding: 10px;
+            a{
+                text-decoration: none;
+                color: $black;
+            }
+        }
+        .auth-nav{
+            display: none;
+        }
+            .auth{
+                .sign, .login{
+                    border: 1px solid $primary-color;
+                    padding: 7px 20px;
+                    border-radius: 20px;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+                .login{
+                    background: $primary-color;
+                    color: $white;
+                }
+                .sign:hover{
+                    background: $primary-color;
+                    color: $white;
+                }
+                .login:hover{
+                    background: $white;
+                    color: $black;
+                }
+            }
+        }
+        .mobile-search{
+            display: none !important;
+        }
+        .home-div{
+            height: 300px;
+            background: url('../images/home-back.svg');
+            color: $white;
+            .top-home{
+                h1{
+                    font-size: 40px;
+                }
+                .search{
+                    background: $white;
+                    border-radius: 10px;
+                    color:$black;
+                    .search-icon{
+                        margin-left: 15px;
+                    }
+                    input{
+                        outline: none;
+                        border: 0;
+                        margin-left: 10px;
+                        width:62%;
+                        border-right: 3px solid $grey;
+                    }
+                    input::placeholder{
+                        padding: 10px;
+                    }
+                    .icon-div{
+                        width: 300px;
+                        .anywhere{
+                            margin: 10px 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .categories{
+            margin: 0;
+            .site-category{
+                border-right: 2px solid $grey;
+                font-size: 1rem;
+                margin: 0;
+                // width: 250px;
+                height: 400px;
+                .accordion{
+                    border: none;
+                    outline: none;
+                    // font-weight: bold;
+                }
+                .accordion-img{
+                    margin-right: 30px;
+                }
+                h3{
+                    font-size: 20px;
+                    padding-top: 15px;
+                    padding-left: 15px;
+                }
+                li{
+                    list-style: none;
+                    margin-bottom: 10px;
+                    .elect-a{
+                        text-decoration: none;
+                        color: $black;
+                        display: flex;
+                    }
+                }
+            }
+            .sale{
+                width: 700px;
+                height: 350px;
+                border-radius: 10px;
+                margin-left: 10px;
+            }
+            .side-photo{
+                padding-right: 50px;
+                .absolute-img{
+                    margin-left: 160px;
+                    // padding-top: 30px;
+                    .img-top{
+                        position: absolute;
+                        right: 70px;
+                        padding-top: 25px;
+                        font-size: 16px;
+                        width: 100px;
+                        height: 100px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .electric-card{
+            display: flex;
+            flex-wrap: wrap;
+            .mobile-card{
+                width: 334px;
+                height: 400px;
+                border-radius: 16px;
+                background: $white;
+                flex-shrink: 0;
+                border: 1px solid $mini-card;
+                .discount{
+                    width: 59px;
+                    height: 50px;
+                    flex-shrink: 0;
+                    border-top-left-radius: 12px;
+                    border-bottom-right-radius: 12px;
+                    color: $white;
+                    text-align: center;
+                    padding-top: 10px;
+                    font-size: 20px;
+                    font-family: Satoshi;
+                    font-weight: 500;
+                    line-height: 16.581px;
+                    background: $primary-color;
+                }
+                .icon{
+                    width: 103px;
+                    height: 113.023px;
+                    flex-shrink: 0;
+                    margin-left: 110px;
+                    margin-bottom: 30px;
+                }
+                h3{
+                    padding-left: 12px;
+                    color: $black;
+                    font-size: 20px;
+                    font-family: Satoshi;
+                    font-weight: 700;
+                    line-height: 25.625px;
+                }
+                .desc{
+                    padding: 0 12px;
+                    color: $forgot-text;
+                    font-size: 16px;
+                    font-family: Satoshi;
+                    font-weight: 500;
+                }
+                .price-container{
+                    padding: 0 12px;
+                    .price{
+                        color: $black;
+                        font-size: 20px;
+                        margin-right: 10px;
+                        font-family: Satoshi;
+                        font-weight: 500;
+                        line-height: 18px;
+                    }
+                    .details{
+                        color: $primary-color;
+                        background: $secondary-color;
+                        font-size: 14px;
+                        text-align: center;
+                        font-family: Satoshi;
+                        font-weight: 900;
+                        line-height: 21px;
+                    }
+                    .details:hover{
+                        background: $primary-color;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        .may-like{
+            display: none;
+        }
+        .top-deals, .all-view{
+            margin-left: 40px;
+            padding-right: 30px;
+            h3{
+                font-size: 30px;
+                color:$primary-color;
+            }
+            .link{
+                margin: 0;
+                a{
+                    margin: 0;
+                    color: $primary-color;
+                    text-decoration: none;
+                }
+                .view-all{
+                    margin-right: 30px;
+                }
+            }
+            .deal-card::-webkit-scrollbar{
+                width: 0 !important;
+            }
+            .deal-card{
+                display: flex;
+                overflow-x: auto;
+                scrollbar-width: none;
+                .mobile-card{
+                    width: 334px;
+                    height: 400px;
+                    border-radius: 16px;
+                    background: $white;
+                    flex-shrink: 0;
+                    border: 1px solid $mini-card;
+                    .discount{
+                        width: 59px;
+                        height: 50px;
+                        flex-shrink: 0;
+                        border-top-left-radius: 12px;
+                        border-bottom-right-radius: 12px;
+                        color: $white;
+                        text-align: center;
+                        padding-top: 10px;
+                        font-size: 20px;
+                        font-family: Satoshi;
+                        font-weight: 500;
+                        line-height: 16.581px;
+                        background: $primary-color;
+                    }
+                    .icon{
+                        width: 103px;
+                        height: 113.023px;
+                        flex-shrink: 0;
+                        margin-left: 110px;
+                        margin-bottom: 30px;
+                    }
+                    h3{
+                        padding-left: 12px;
+                        color: $black;
+                        font-size: 20px;
+                        font-family: Satoshi;
+                        font-weight: 700;
+                        line-height: 25.625px;
+                    }
+                    .desc{
+                        padding: 0 12px;
+                        color: $forgot-text;
+                        font-size: 16px;
+                        font-family: Satoshi;
+                        font-weight: 500;
+                    }
+                    .price-container{
+                        padding: 0 12px;
+                        .price{
+                            color: $black;
+                            font-size: 20px;
+                            margin-right: 10px;
+                            font-family: Satoshi;
+                            font-weight: 500;
+                            line-height: 18px;
+                        }
+                        .details{
+                            color: $primary-color;
+                            background: $secondary-color;
+                            font-size: 14px;
+                            text-align: center;
+                            font-family: Satoshi;
+                            font-weight: 900;
+                            line-height: 21px;
+                        }
+                        .details:hover{
+                            background: $primary-color;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        .feature{
+            position: relative;
+            margin-bottom: 200px;
+            h1{
+                margin-bottom: 100px;
+            }
+            .inner-feature{
+                width: 97%;
+                height: 484px;
+                border-radius: 25px;
+                // overflow: hidden;
+                .in-feature{
+                    position: relative;
+                    img{
+                        width: 100%;
+                        height: 484px;
+                        border-radius: 15px;
+                    }
+                    .text{
+                        position: absolute;
+                        bottom: 25px;
+                        background: rgba(0,0,0,0.5);
+                        padding: 10px;
+                        color: $white;
+                        font-size: 20px;
+                        left: 45%;
+                    }
+                }
+                .slick-dots {
+                    width: 100;
+                    li {
+                        width: 50px;
+                        button:before {
+                            margin-top: 50px !important;
+                            width: 30px; /* Adjust the width as per your preference */
+                            background: red;
+                            color: transparent;
+                            border-radius: 10px;
+                            margin-left: 20px;
+                            height: 10px; /* Adjust the height as per your preference */
+                            // border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            .carousel-arrow{
+                position: absolute;
+                top: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 95%;
+                .arrow-but{
+                    border: none;
+                    color: $white;
+                    background: none;
+
+                }
+            }
+        }
+        .popular-brand{
+            .top-brand{
+                h1{
+                    color: $black;
+                    text-align: center;
+                    font-size: 36px;
+                    font-family: Satoshi;
+                    font-weight: 500;
+                    line-height: 66.325px;
+                }
+                .popular-a{
+                    color: $primary-color;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-family: Satoshi;
+                    font-weight: 500;
+                    line-height: 16.581px;
+                }
+            }
+            .brands::-webkit-scrollbar{
+                display: none;
+            }
+            .brands{
+                overflow-x: auto;
+                scrollbar-width: none;
+                .brand-card{
+                    width: 325px;
+                    height: 500px;
+                    flex-shrink: 0;
+                    border: 1px solid $mini-card;
+                    border-radius: 48px;
+                    background: $white;
+                    margin-right: 52px;
+                    .brands-img{
+                        width: 325px;
+                        height: 230px;
+                        flex-shrink: 0;
+                        text-align: center;
+                        background: rgba(255, 255, 255, 0.20);
+                        border-bottom: 2px solid $home-background;
+                    }
+                    .brands-image{
+                        margin-top: 55px;
+                        width: 148.579px;
+                        height: 100px;
+                        flex-shrink: 0;
+                    }
+                    .brand-inner{
+                        padding-top: 8px;
+                        text-align: center;
+                        h3{
+                            color: $black;
+                            font-size: 24px;
+                            font-family: Satoshi;
+                            font-weight: 700;
+                            line-height: 84px;
+                        }
+                        .automobile{
+                            padding-left: 85px;
+                            h4{
+                                color: $black;
+                                font-size: 20px;
+                                font-family: Satoshi;
+                                font-weight: 500;
+                                margin-left: 10px;
+                            }
+                        }
+                        .details{
+                            color: $primary-color;
+                            font-size: 16px;
+                            font-family: Satoshi;
+                            font-weight: 500;
+                            border-radius: 15px;
+                            margin-top: 15px;
+                            border: 1px solid $primary-color;
+                            background: $secondary-color;
+                            margin-bottom: 4px;
+                        }
+                    }
+                }
+            }
+        }
+        .after-brand{
+            display: flex;
+            margin-left: 130px;
+            width: 1180px;
+            height: 240px;
+            flex-shrink: 0;
+            .first-after{
+                display: flex;
+                flex-direction: column;
+                width: 235px; 
+                margin-left: 20px;
+                h3{
+                    color: $color-dark;
+                    font-size: 20px;
+                    font-family: Inter;
+                    font-weight: 600;
+                    line-height: 28px;
+                    letter-spacing: -0.2px;
+                }
+                .time{
+                    .date{
+                        width: 45px;
+                        height: 50px;
+                        flex-shrink: 0;
+                        margin: 6px;
+                        border-radius: 5px;
+                        background: $date-color !important;
+                        .p-brand{
+                            color: #FFF;
+                            text-align: center;
+                            font-size: 16px;
+                            font-family: Inter;
+                            font-weight: 700;
+                            .p-tag{
+                                font-weight: 400;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .second-after::-webkit-scrollbar{
+                width: 0;
+            }
+            .second-after{
+                display: flex;
+                align-self: center;
+                padding-left: 20px;
+                overflow-x: auto;
+                scrollbar-width: none;
+                .span{
+                    font-size: 14px;
+                    color: $primary-color;
+                    background: $secondary-color;
+                    padding: 4px 7px;
+                    border-radius: 12px;
+                }
+            }
+        }
+        .leave{
+            display: none;
+        }
+        .footer{
+            background: $footer-background;
+            margin-top: 200px;
+            color: #FFFFFF;
+            height: 500px;
+            .inside-footer{
+                width: 1100px;
+                margin: auto;
+                margin-top: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                a{
+                    color: $white;
+                    text-decoration: none;
+                }
+                a:hover{
+                    color: $grey;
+                }
+                .footer-mobile{
+                    background: $footer-mobile;
+                    // width: 100px;
+                    margin-bottom: 10px;
+                    padding: 7px 12px;
+                    border-radius: 20px;
+                    h4{
+                        font-size: 16px;
+                    }
+                }
+                .ios{
+                    width: 90px;
+                }
+                .ios h4, .android h4{
+                    margin-left: 10px;
+                }
+                .android{
+                    width: 110px;
+                }
+            }
+        }
+        .copy{
+            background: $footer-mobile;
+            color: $white;
+            font-weight: 300;
+            font-size: 14px;
+        }
+    
+        // **********ELECTRICAL PAGE****************//
+        .elect-categories{
+            height: 400px;
+            border-right: 3px solid $grey;
+            h3{
+                font-size: 20px;
+                padding-top: 15px;
+                padding-left: 15px;
+            }
+            .accordion-header{
+                border: none;
+                outline: none;
+                // border-bottom: red;
+                // color: red;
+                .accordion-img{
+                    margin-right: 30px;
+                }
+                .accordion-span{
+                    font-size: 1rem;
+                }
+            }
+            li{
+                list-style: none;
+                margin-bottom: 10px;
+                a{
+                    text-decoration: none;
+                    color: $black;
+                }
+            }
+        }
+        .all-view{
+            .back-track{
+                width: 70px;
+                height: 40px;
+                text-decoration: none;
+                color: $black;
+                .back-img{
+                    border-radius: 50%;
+                    color: $black;
+                    border: 1px solid $black;
+                    padding: 10px;
+                    margin-right: 10px;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+            .indicators{
+                .indi{
+                    font-size: 14px;
+                    .first{
+                        text-decoration: none !important;
+                        color: $indicator;
+                    }
+                    .breadcrumb-active{
+                        color: $black;
+                    }
+                }
+                select{
+                    outline: none;
+                    border: none;
+                    margin-right: 40px;
+                    color: $indicator;
+                }
+            }
+        }
+        .popular-brand{
+            .top-brand{
+                margin-right: 20px;
+            }
+        }
+        .similar::-webkit-scrollbar{
+            display: none;
+        }
+        .similar{
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            .card{
+                min-width: 300px;
+            }
+            .details{
+                color: $primary-color;
+                background: $secondary-color;
+                font-size: 14px;
+                border: none;
+                margin-left: 50px;
+            }
+            .details:hover{
+                background: $primary-color;
+                color: $white;
+            }
+        }
+        .dynamic-render{
+            margin: 20px 20px 20px 30px;
+            .bread{
+                .mob-anch{
+                    text-decoration: none;
+                    color: $mobile-input;
+                }
+            }
+            .back-track{
+                text-decoration: none;
+                color: $black;
+                width: 100px;
+                img{
+                    margin-right: 10px;
+                    border: 1px solid $black;
+                    padding: 7px;
+                    border-radius: 50%;
+                }
+                p{
+                    margin-top: 10px;
+                }
+            }
+            .arrow{
+                position: relative;
+                .dynamo{
+                    width: 95%;
+                    height: 400px;
+                    margin-top: 30px;
+                    background: #E9E9E9C2;
+                    .dynamic-img{
+                        width: 100%;
+                        text-align: center !important;
+                        margin-top: 50px;
+                        img{
+                            width: 300px;
+                            height: 300px;
+                            margin: auto;
+                        }
+                    }
+                }
+                .carousel-arrow{
+                    position: absolute;
+                    top: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 95%;
+                    .arrow-but{
+                        border: none;
+                        color: #666481;
+                        height: 50px;
+                        width: 50px;
+                        background: none;
+    
+                    }
+                }
+            }
+            .dynamic-fav{
+                margin-top: 30px;
+                width: 95%;
+                margin-bottom: 67px;
+                .left-images{
+                    img{
+                        width: 90px;
+                        height: 90px;
+                        margin-right: 20px;
+                    }
+                }
+                .dynamo-icon{
+                    .dynamo-anchor{
+                        margin-right: 15px;
+                        text-decoration: none;
+                        color: $color-dark;
+                        font-size: 14px;
+                        text-align: center;
+                        .icon{
+                            padding: 6px;
+                            margin-right: 6px;
+                            border: 1px solid $color-dark;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+            .prod-details{
+                margin-bottom: 400px;
+                .prod-anchor{
+                    .active{
+                        color: $primary-color;
+                    }
+                    button:hover{
+                        color: $primary-color;
+                        text-decoration: underline;
+                    }
+                    button{
+                        color: $forgot-text;
+                        background: none;
+                        border: none;
+                        margin-right: 57px;
+                        text-decoration: none;
+                        font-family: Satoshi;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 21px;
+                    }
+                }
+                .all-in-all{
+                    margin-top: 40px;
+                    .about-product{
+                        h2,h3{
+                            color: $forgot-text;
+                            font-family: Satoshi;
+                            font-size: 24px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 21px;
+                        }
+                        .dynamo-about{
+                            color: $forgot-text;
+                            font-family: Satoshi;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 24px;
+                            letter-spacing: 0.15px;
+                        }
+                        .about-details{
+                            margin-top: 21px;
+                            p{
+                                color: $indicator;
+                                font-family: Satoshi;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 500;
+                                line-height: 24px;
+                                letter-spacing: 0.15px;
+                            }
+                            span{
+                                font-weight: bold;
+                            }
+                        }
+                        .disclaimer{
+                            margin-top: 48px;
+                            h4{
+                                color: $forgot-text;
+                                font-family: Satoshi;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 24px;
+                                letter-spacing: 0.15px;
+                                margin-bottom: 0;
+                            }
+                            p{
+                                color: $indicator;
+                                font-family: Satoshi;
+                                font-size: 16px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 24px;
+                                letter-spacing: 0.15px;
+                            }
+                            .manufacturer{
+                                color: $manu-button;
+                                text-align: center;
+                                font-family: Satoshi;
+                                font-size: 16px;
+                                padding: 14px 28px;
+                                border-radius: 40px;
+                                border: none;
+                                background: red;
+                                font-style: normal;
+                                font-weight: 900;
+                                line-height: 21px;
+                            }
+                        }
+                        
+                    }
+                }
+                .specifications{
+                    background: $white;
+                    border: 1px solid $mini-card;
+                    border-radius: 10px;
+                    padding-left: 30px;
+                    padding-top: 30px;
+                    h2{
+                        margin-bottom: 32px;
+                        color: $forgot-text;
+                        font-family: Satoshi;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 21px;
+                    }
+                    p{
+                        color: $indicator;
+                        font-family: Satoshi;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 24px;
+                        letter-spacing: 0.15px;
+                    }
+                    span{
+                        font-weight: bold;
+                    }
+                }
+                .about-product{
+                    margin-top: 44px;
+                    h2,h3{
+                        color: $forgot-text;
+                        font-family: Satoshi;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 21px;
+                    }
+                    .dynamo-about{
+                        color: $forgot-text;
+                        font-family: Satoshi;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 24px;
+                        letter-spacing: 0.15px;
+                    }
+                    .about-details{
+                        margin-top: 21px;
+                        p{
+                            color: $indicator;
+                            font-family: Satoshi;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 24px;
+                            letter-spacing: 0.15px;
+                        }
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                    .disclaimer{
+                        margin-top: 48px;
+                        h4{
+                            color: $forgot-text;
+                            font-family: Satoshi;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 24px;
+                            letter-spacing: 0.15px;
+                            margin-bottom: 0;
+                        }
+                        p{
+                            color: $indicator;
+                            font-family: Satoshi;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 24px;
+                            letter-spacing: 0.15px;
+                        }
+                        .manufacturer{
+                            margin-top: 70px;
+                            color: $manu-button;
+                            text-align: center;
+                            font-family: Satoshi;
+                            font-size: 16px;
+                            padding: 14px 28px;
+                            border-radius: 40px;
+                            border: none;
+                            background: red;
+                            font-style: normal;
+                            font-weight: 900;
+                            line-height: 21px;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .electric-mobile{
+            display: none;
+        }
+
+        /******AUTH STYLINGS ********/
+        .get-started{
+            margin-top: 120px;
+                margin-left: 16px;
+                margin-right: 16px;
+                .p-start{
+                    color: $primary-color;
+                    text-align: center;
+                    font-family: Satoshi Variable;
+                    font-size: 36px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 21px;
+                    margin-bottom: 94px;
+                }
+                .google-btn{
+                    display: flex;
+                    padding: 10px 20px;
+                    background: $white;
+                    flex-direction: row;
+                    font-size: 14px;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: auto;
+                    border-radius: 10px;
+                    border: 1px solid $mobile-input;
+                    gap: 8px;
+                }
+            }
+            .register-form{
+                width: 640px;
+                margin: auto;
+                margin-top: 63px;                
+                .each-reg{
+                    display: flex;
+                    padding: 0px 8px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    position: relative;
+                    .picker{
+                        width: 92%;
+                    }
+                    .form-label{
+                        color: $black;
+                        font-size: 16px;
+                        font-family: Satoshi;
+                        margin-left: 16px;
+                    }
+                    .error{
+                        font-size: 0.8rem;
+                        font-weight: 400;
+                        margin-bottom: 0;
+                        color: #DF0000;
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+                    }
+                    .form-control:focus {
+                        color: $black;
+                        background-color: $white;
+                        border-color: $black;
+                        outline: 0;
+                        box-shadow: none;
+                    }
+                    .form-control{
+                        display: flex;
+                        width: 90%;
+                        margin: 0 18px 16px;
+                        height: 40px;
+                        padding: 4px 8px;
+                        align-items: center;
+                        gap: 3.725px;
+                    }
+                    .form-control::placeholder{
+                        color: $forgot-text;
+                        font-size: 14px;
+                        font-family: Satoshi;
+                        line-height: 10.058px;
+                    }
+                }
+                .reg-condition{
+                    margin-left: 16px;
+                    font-family: Satoshi;
+                    margin-bottom: 76px;
+                    .checkbox{
+                        margin-right: 10px;
+                    }
+                    span{
+                        color: $black;
+                        font-size: 16px;
+                        .terms{
+                            font-size: 16px;
+                            color: $forgot-text;
+                        }
+                    }
+                }
+                .forgot-pass{
+                    float: right;
+                    margin-right: 16px;
+                    color: $primary-color;
+                    font-size: 16px;
+                    margin-bottom: 180px;
+                    font-family: Satoshi;
+                    text-decoration: none;
+                }
+                .join{
+                    color: $white;
+                    display: flex;
+                    width: 320px;
+                    padding: 14px 28px;
+                    align-items: center;
+                    gap: 8px;
+                    background: $primary-color;
+                    text-align: center;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 100px;
+                    margin-left: 150px;
+                    border-radius: 40px;
+                }
+                .forgot-btn{
+                    margin-top: 320px;
+                }
+                .new-btn{
+                    margin-top: 200px;
+                }
+            }
+            .reg-p{
+                color: $black;
+                margin-left: 80px;
+                margin-top: 10px;
+                font-size: 14px;
+                font-family: Satoshi;
+                margin-bottom: 100px;
+                .reg-log{
+                    color: $primary-color;
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: Satoshi;
+                }
+            }
+                .minimo{
+                    border: 3px dashed $primary-color;
+                    // height: 636px;
+                    width: 644px;
+                    margin: auto;
+                    border-radius: 48px;
+                    margin-bottom: 100px;
+                .google-btn{
+                    display: flex;
+                    padding: 10px 20px;
+                    background: $white;
+                    flex-direction: row;
+                    font-size: 14px;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: auto;
+                    border-radius: 10px;
+                    border: 1px solid $mobile-input;
+                    gap: 8px;
+            }
+            .register-form{
+                width: 640px;
+                margin: auto;
+                margin-top: 63px;
+                .each-reg{
+                    display: flex;
+                    padding: 0px 8px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 8px;
+                    position: relative;
+                    .picker{
+                        width: 92%;
+                    }
+                    .form-label{
+                        color: $black;
+                        font-size: 16px;
+                        font-family: Satoshi;
+                        margin-left: 16px;
+                    }
+                    .error{
+                        font-size: 0.8rem;
+                        font-weight: 400;
+                        margin-bottom: 0;
+                        color: #DF0000;
+                        position: absolute;
+                        right: 20px;
+                        top: 20px;
+                    }
+                    .form-control:focus {
+                        color: $black;
+                        background-color: $white;
+                        border-color: $black;
+                        outline: 0;
+                        box-shadow: none;
+                    }
+                    .form-control{
+                        display: flex;
+                        width: 90%;
+                        margin: 0 18px 16px;
+                        height: 40px;
+                        padding: 4px 8px;
+                        align-items: center;
+                        gap: 3.725px;
+                    }
+                    .form-control::placeholder{
+                        color: $forgot-text;
+                        font-size: 14px;
+                        font-family: Satoshi;
+                        line-height: 10.058px;
+                    }
+                }
+                .reg-condition{
+                    margin-left: 16px;
+                    font-family: Satoshi;
+                    margin-bottom: 76px;
+                    .checkbox{
+                        margin-right: 10px;
+                    }
+                    span{
+                        color: $black;
+                        font-size: 16px;
+                        .terms{
+                            font-size: 16px;
+                            color: $forgot-text;
+                        }
+                    }
+                }
+                .forgot-pass{
+                    float: right;
+                    margin-right: 16px;
+                    color: $primary-color;
+                    font-size: 16px;
+                    margin-bottom: 180px;
+                    font-family: Satoshi;
+                    text-decoration: none;
+                }
+                .join{
+                    color: $white;
+                    display: flex;
+                    width: 320px;
+                    padding: 14px 28px;
+                    align-items: center;
+                    gap: 8px;
+                    background: $primary-color;
+                    text-align: center;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 100px;
+                    margin-left: 150px;
+                    border-radius: 40px;
+                }
+                .forgot-btn{
+                    margin-top: 320px;
+                }
+                .new-btn{
+                    margin-top: 200px;
+                }
+            }
+            .reg-p{
+                color: $black;
+                margin-left: 80px;
+                margin-top: 10px;
+                font-size: 14px;
+                font-family: Satoshi;
+                margin-bottom: 100px;
+                .reg-log{
+                    color: $primary-color;
+                    text-align: center;
+                    font-size: 14px;
+                    font-family: Satoshi;
+                }
+            }
+        }
+        .reg-footer{
+            background: $footer-grey;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            color: $white;
+            height: 30px;
+            font-size: 14px;
+            font-family: Satoshi;
+        }
+}
+
+/**************REGISTER STYLE ****************/
+@media only screen and (max-width: 600px) {
+    body{
+        // height: 943px;
+        margin: 0;
+        padding: 0;
+        .register-nav{
+            display: none;
+        }
+        .navbar{
+            margin: 16px;
+            position: relative;
+            .register{
+                .finance{
+                    .a-register{
+                        display: flex;
+                        width: 35.66px;
+                        height: 13.97px;
+                        flex-direction: column;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        .dig{
+                            font-size: 14px;
+                            position: absolute;
+                            font-weight: bold;
+                        }
+                        .img-register{
+                        width: 54.463px;
+                        height: 40.163px;
+                        flex-shrink: 0;
+                    } 
+                }
+            }
+            .navbar-list{
+                text-decoration: none;
+                color: $black;
+
+                }
+            }
+        }
+        .get-started{
+            margin-top: 54px;
+            margin-left: 16px;
+            margin-right: 16px;
+            .p-start{
+                margin-bottom: 34px;
+                color: $primary-color;
+                text-align: center;
+                font-size: 24px;
+                font-family: Satoshi;
+                font-weight: 500;
+                line-height: 21px;
+            }
+        }
+        .minimo{
+
+            .google-btn{
+                display: flex;
+                padding: 8px 16px;
+                background: $white;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin: auto;
+                border-radius: 10px;
+                border: 1px solid $mobile-input;
+                gap: 8px;
+            }
+            .forgot-text{
+                color: $forgot-text;
+                font-size: 14px;
+                font-family: Satoshi;
+                line-height: 24px;
+            }
+        }
+        .register-form{
+            margin-bottom: 100px;
+            .mobile-personal{display: none;}
+            .each-reg{
+                position: relative;
+                display: flex;
+                padding: 0px 8px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                .picker{
+                    width: 92%;
+                    margin: auto;
+                }
+                .form-label{
+                    color: $black;
+                    font-size: 16px;
+                    font-family: Satoshi;
+                    margin-left: 16px;
+                }
+                .error{
+                    font-size: 0.6rem;
+                    font-weight: 400;
+                    margin-bottom: 0;
+                    color: #DF0000;
+                    position: absolute;
+                    right: 20px;
+                    top: 25px;
+                }
+                .form-control:focus {
+                    color: $black;
+                    background-color: $white;
+                    border-color: $black;
+                    outline: 0;
+                    box-shadow: none;
+                }
+                
+                .form-control{
+                    display: flex;
+                    width: 90%;
+                    margin: 0 18px 16px;
+                    height: 40px;
+                    padding: 4px 8px;
+                    align-items: center;
+                    gap: 3.725px;
+                }
+                .form-control::placeholder{
+                    color: $forgot-text;
+                    font-size: 14px;
+                    font-family: Satoshi;
+                    line-height: 10.058px;
+                }
+            }
+            .reg-condition{
+                margin-left: 16px;
+                font-family: Satoshi;
+                margin-bottom: 76px;
+                .checkbox{
+                    margin-right: 10px;
+                }
+                span{
+                    color: $black;
+                    font-size: 16px;
+                    .terms{
+                        font-size: 16px;
+                        color: $forgot-text;
+                    }
+                }
+            }
+            .forgot-pass{
+                float: right;
+                margin-right: 16px;
+                color: $primary-color;
+                font-size: 16px;
+                margin-bottom: 80px;
+                font-family: Satoshi;
+                text-decoration: none;
+            }
+            .join{
+                color: $white;
+                height: 40px;
+                background: $primary-color;
+                text-align: center;
+                font-size: 16px;
+                width: 90%;
+                margin-left: 16px;
+                font-family: Satoshi;
+                font-weight: 500;
+                line-height: 7.823px;
+            }
+            .forgot-btn{
+                margin-top: 320px;
+            }
+            .new-btn{
+                margin-top: 200px;
+            }
+        }
+        .reg-p{
+            color: $black;
+            margin-left: 16px;
+            font-size: 14px;
+            font-family: Satoshi;
+            margin-bottom: 100px;
+            .reg-log{
+                color: $primary-color;
+                text-align: center;
+                font-size: 14px;
+                font-family: Satoshi;
+            }
+        }
+        .reg-footer{
+            background: $footer-grey;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            color: $white;
+            height: 30px;
+            font-size: 14px;
+            font-family: Satoshi;
+        }
+        .mobile-nav2{
+            display: none !important;
+        }
+    }
+
+    /*************NAVBAR**************/
+    .cat-div{
+        .navbar{
+            .navbar-toggler{
+                border: none;
+                padding: 0;
+                font-size: 16px;
+                margin-right: 5px;
+                color: $toggler-button;
+            }
+            .navbar-brand{
+                margin-left: 5px;
+                display: flex;
+                .dig{
+                    font-size: 14px;
+                    position: absolute;
+                    font-weight: bold;
+                }
+                .img-register{
+                    width: 54.463px;
+                    height: 40.163px;
+                    flex-shrink: 0;
+                }
+            }
+            .no-show{
+                display: none;
+            }
+            .ul-inner-accordion{
+                .li-inner-accordion{
+                    color: $black;
+                    text-decoration: none;
+                }
+            }
+            .navbar-collapse{
+                padding-top: 30px;
+                .navbar-nav{
+                    .nav-item{
+                        .accordion-item{
+                            .accordion-header{
+                                display: flex;
+                                .accordion-img{
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
+                        .ul-inner-accordion{
+                            .li-inner-accordion{
+                                color: $black;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .auth-nav{
+                display: block;
+                display: flex;
+            }
+            .mobile-nav{
+                display: none;
+            }
+            .user-nav{
+                margin-left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+            .category-login{
+                background: red !important;
+            }
+        }
+    }
+    .all-view{
+        background: blue;
+        width: 100%;
+        display: none;
+    }
+    .similar-product{
+        display: none;
+    }
+    .electric-mobile{
+        margin: 15px;
+        .mobile-elect{
+            .mob-anch{
+                .back-img{
+                    margin-right: 10px;
+                }
+            }
+        }
+        .auth-nav{
+            margin-bottom: 35px;
+            .user-nav, .nav-cart{
+                width: 30px;
+                height: 30px;
+            }
+            .user-nav{
+                margin-right: 7px;
+                margin-left: 15px;
+            }
+        }
+        .select-mobile{
+            color: $indicator;
+            font-family: Satoshi;
+            font-size: 12px;
+            // float: right;
+            background: #fff;
+            border-radius: 10px;
+            padding: 5px 7px;
+            border: 1px solid $indicator;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 20px;
+            letter-spacing: 0.1px;
+        }
+        .electric-card{
+            margin-top: 28px !important;
+            display: flex;
+            flex-wrap: wrap;
+            .mobile-card{
+                width: 147px;
+                height: 234.731px;
+                flex-shrink: 0;
+                border-radius: 16px;
+                border: 1px solid $mini-card;
+                background: $white;
+                margin: 8px;
+                .discount{
+                    display: none;
+                    width: 31px;
+                    height: 32px;
+                    border-bottom-right-radius: 12px;
+                    border-top-left-radius: 12px;
+                    color: $white;
+                    padding-top: 6px;
+                    background: $primary-color;
+                    text-align: center;
+                    font-size: 10px;
+                    font-family: Satoshi;
+                    margin-bottom: 0;
+                    font-weight: 500;
+                    line-height: 16.581px;
+                }
+                h3{
+                    color: $black;
+                    font-size: 14px;
+                    font-family: Satoshi;
+                    font-weight: 500;
+                    line-height: 16.581px;
+                    margin-left: 7px;
+                }
+                .desc{
+                    margin-left: 7px;
+                }
+                .icon{
+                    width: 59px;
+                    height: 64.742px;
+                    margin-left: 50px;
+                    margin-bottom: 10px;
+                    margin-top: 40px;
+                    flex-shrink: 0;
+                }
+                .price-container{
+                    .price{
+                        color: $toggler-button;
+                        font-size: 10px;
+                        margin-left: 5px;
+                        font-family: Satoshi;
+                        font-weight: 700;
+                        line-height: 18px;
+                    }
+                    .details{
+                        color: $primary-color;
+                        background: $secondary-color;
+                        font-size: 10px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                        font-family: Satoshi;
+                        font-weight: 500;
+                        line-height: 14.724px;
+                        padding: 3px 10px;
+                    }
+                }
+            }
+        }
+    }
+    .may-like{
+        margin: 2rem;
+        .h1-a{
+            h1{
+                color: $color-dark;
+                font-family: Satoshi;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 32px;
+                letter-spacing: 0.1px;
+            }
+        }
+        .also-like::-webkit-scrollbar{
+            display: none;
+        }
+        .also-like{
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+    }
+    // {/**************SEARCH BODY****************/}
+    .mobile-search{
+        display: block;
+        margin-left: 16px;
+        width: 93%;
+        height: 35px;
+        border-radius: 12px;
+        background: $white;
+        border: 1px solid $mobile-input;
+        margin-bottom: 20px;
+        .nav-search{
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #7C7C7C;
+            width: 15px;
+            height: 20px;
+            margin-top: 7px;
+        }
+        .input-nav{
+            border: none;
+            width: 100%;
+            outline: none;
+            padding-left: 10px;
+        }
+        .input-nav::placeholder{
+            padding-left: 10px !important;
+            font-size: 14px;
+            font-family: Satoshi;
+        }
+    }
+    .home-mobile, .site-category{
+        display: none;
+    }
+    .sale{
+        padding-left: 10px;
+        border-radius: 15px;
+        width: 85% !important;
+        height: 140px !important;
+        background-image: green;
+    }
+    .side-photo{
+        .absolute-img{
+            margin-left: 0;
+            .sale-img{
+                // width: 60px !important;
+                height: 35px !important;
+                flex-shrink: 0;
+            }
+            .img-top{
+                height: 100px;
+                // position: absolute;
+                color: $white;
+                width: 50px;
+                text-align: center;
+                font-size:10px;
+                font-family: Satoshi;
+                font-weight: 600;
+                right: 25px;
+                padding-top: 10px;
+            }
+        }
+    }
+    /***********TOP DEALS *************/
+    .top-deals{
+        margin-left: 16px;
+        h1{
+            color: $black;
+            font-size: 20px;
+            font-family: Satoshi;
+            font-weight: 500;
+            line-height: 16.581px;
+        }
+        .h1{
+            display: inline;
+        }
+        .link{
+            margin-bottom: 28px;
+            .cheap-price{
+                color: $primary-color;
+                text-align: center;
+                font-size: 14px;
+                font-family: Satoshi;
+                font-weight: 500;
+                line-height: 16.581px;
+                text-decoration: none;
+            }
+            .view-all{
+                text-decoration: none;
+                color: $primary-color;
+                margin-right: 16px;
+                text-align: center;
+                font-size: 12px;
+                font-family: Satoshi;
+                font-weight: 500;
+                line-height: 16.581px;
+            }
+        }
+        .link-all{
+            float: right;
+        }
+        .deal-card::-webkit-scrollbar{
+            width: 0 !important;
+        }
+        .deal-card{
+            display: flex;
+            overflow-x: auto;
+            scrollbar-width: none;
+            .mobile-card{
+                width: 147px;
+                height: 234.731px;
+                flex-shrink: 0;
+                border-radius: 16px;
+                border: 1px solid $mini-card;
+                background: $white;
+                .discount{
+                    width: 31px;
+                    height: 32px;
+                    border-bottom-right-radius: 12px;
+                    border-top-left-radius: 12px;
+                    color: $white;
+                    padding-top: 6px;
+                    background: $primary-color;
+                    text-align: center;
+                    font-size: 10px;
+                    font-family: Satoshi;
+                    margin-bottom: 0;
+                    font-weight: 500;
+                    line-height: 16.581px;
+                }
+                h3{
+                    color: $black;
+                    font-size: 14px;
+                    font-family: Satoshi;
+                    font-weight: 500;
+                    line-height: 16.581px;
+                    margin-left: 7px;
+                }
+                .desc{
+                    margin-left: 7px;
+                }
+                .icon{
+                    width: 59px;
+                    height: 64.742px;
+                    margin-left: 50px;
+                    margin-bottom: 10px;
+                    margin-top: 0;
+                    flex-shrink: 0;
+                }
+                .price-container{
+                    .price{
+                        color: $toggler-button;
+                        font-size: 10px;
+                        margin-left: 5px;
+                        font-family: Satoshi;
+                        font-weight: 700;
+                        line-height: 18px;
+                    }
+                    .details{
+                        color: $primary-color;
+                        background: $secondary-color;
+                        font-size: 10px;
+                        margin-right: 10px;
+                        margin-bottom: 10px;
+                        font-family: Satoshi;
+                        font-weight: 500;
+                        line-height: 14.724px;
+                        padding: 3px 10px;
+                    }
+                }
+            }
+        }
+    }
+    /************ FEATURE MANUFACTURERS ************/
+    .feature{
+        position: relative;
+        margin-bottom: 100px;
+        h1{
+            margin-bottom: 50px;
+        }
+        .inner-feature{
+            width: 97%;
+            height: 120px;
+            border-radius: 25px;
+            .in-feature{
+                position: relative;
+                img{
+                    width: 100%;
+                    height: 120px;
+                    border-radius: 15px;
+                }
+                .text{
+                    position: absolute;
+                    bottom: 0;
+                    background: rgba(0,0,0,0.5);
+                    padding: 7px;
+                    color: $white;
+                    font-size: 12px;
+                    left: 40%;
+                }
+            }
+            .slick-dots {
+                width: 100;
+                li {
+                    width: 50px;
+                    button:before {
+                        margin-top: 50px !important;
+                        width: 20px; /* Adjust the width as per your preference */
+                        background: red;
+                        color: transparent;
+                        border-radius: 10px;
+                        margin-left: 10px;
+                        height: 10px; /* Adjust the height as per your preference */
+                        // border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .carousel-arrow{
+            position: absolute;
+            top: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 95%;
+            .arrow-but{
+                display: none;
+                border: none;
+                color: $white;
+                background: none;
+
+            }
+        }
+    }
+    /******POPULAR BRANDS************/
+    .popular-brand{
+        .top-brand{
+            h1{
+                color: $black;
+                // margin-left: 16px;
+                text-align: center;
+                font-size: 20px;
+                font-family: Satoshi;
+                font-weight: 500;
+                line-height: 16.581px;
+            }
+            .popular-a{
+                color: $primary-color;
+                text-align: center;
+                text-decoration: none;
+                font-size: 12px;
+                font-family: Satoshi;
+                font-weight: 500;
+                line-height: 16.581px;
+            }
+        }
+        .brands::-webkit-scrollbar{
+            display: none;
+        }
+        .brands{
+            padding: 0;
+            overflow-x: auto;
+            scrollbar-width: none;
+            .brand-card{
+                width: 147px;
+                border-radius: 10px;
+                border: 1px solid $mini-card;
+                background: $white;
+                margin-left: 8px;
+                .brands-img{
+                    width: 147px;
+                    height: 105px;
+                    text-align: center;
+                    background: rgba(255, 255, 255, 0.20);
+                    border-bottom: 2px solid $home-background;
+                }
+                .brands-image{
+                    margin-top: 15px;
+                }
+                .brand-inner{
+                    padding-top: 8px;
+                    text-align: center;
+                    h3{
+                        color: $black;
+                        font-size: 16px;
+                        font-family: Satoshi;
+                        font-weight: 700;
+                        line-height: 21px;
+                    }
+                    .automobile{
+                        padding-left: 35px;
+                        h4{
+                            margin-left: 5px;
+                            color: $black;
+                            font-size: 12px;
+                            font-family: Satoshi;
+                        }
+                    }
+                    .details{
+                        color: $primary-color;
+                        background: $secondary-color;
+                        font-size: 10px;
+                        margin-bottom: 4px;
+                        font-family: Satoshi;
+                        font-weight: 500;
+                        line-height: 14.724px;
+                        padding: 5px 10px;
+                    }
+                }
+            }
+        }
+    }
+    /********AFTER BRAND ************/
+    .after-brand{
+        .first-after{
+            width: 250px;
+            height: 55px;
+            justify-content: center;
+            align-items: center;
+            gap: 11.143px;
+            margin: auto;
+            h3{
+                color: $color-dark !important;
+                text-align: center;
+                font-size: 10px !important;
+                font-family: Satoshi;
+                font-weight: 500;
+                line-height: 11.556px;
+                letter-spacing: -0.083px;
+                width: 50%;
+            }
+            .time{
+                .date{
+                    width: 20px;
+                    height: 22px;
+                    padding-top: 5px;
+                    margin-right: 2px;
+                    border-radius: 1.651px;
+                    background: $date-color !important;
+                    .p-brand, .p-tag{
+                        color: $white;
+                        text-align: center;
+                        font-size: 5px;
+                        font-family: Satoshi;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+        .second-after::-webkit-scrollbar{
+            display: none;
+        }
+        .second-after{
+            margin-top: 20px;
+            display: flex;
+            overflow-x: auto !important;
+            scrollbar-width: none;
+            // width: 900px;
+            .closet{
+                width: 73.875px;
+                margin-left: 15px;
+                img{
+                    width: 51px;
+                    height: 51px;
+                }
+                p{
+                    color: $color-dark;
+                    text-align: center;
+                    font-size: 8px;
+                    margin-top: 5px;
+                    font-family: Inter;
+                    line-height: 6px;
+                    letter-spacing: -0.083px;
+                    margin-bottom: 0;
+                }
+                .span{
+                    color: $primary-color;
+                    text-align: center;
+                    font-size: 8px;
+                    font-family: Inter;
+                    font-weight: 500;
+                    letter-spacing: -0.083px;
+                }
+            }
+        }
+    }
+    .owambe{
+        display: none;
+    }
+    .footer{
+        background: $footer-background;
+        margin-top: 60px;
+        color: #FFFFFF;
+        height: 400px;
+        .inside-footer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a{
+                color: $white;
+                text-decoration: none;
+                font-size: 12px;
+            }
+            a:hover{
+                color: $grey;
+            }
+            .footer-mobile{
+                background: $footer-mobile;
+                // width: 100px;
+                margin-bottom: 10px;
+                padding: 7px 12px;
+                border-radius: 20px;
+                h4{
+                    font-size: 14px;
+                }
+            }
+            .ios{
+                width: 90px;
+            }
+            .ios h4, .android h4{
+                margin-left: 10px;
+            }
+            .android{
+                width: 110px;
+            }
+        }
+    }
+    .copy{
+        background: $footer-mobile;
+        color: $white;
+        font-weight: 300;
+        font-size: 12px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+      
+    /***********ELECTRICAL***************/
+    .row > *{
+        padding-left: 0 !important;
+        .mobile-card-container{
+            width: 150px !important;
+            height: 350px;
+            box-shadow: $white;
+            .discount{
+                display: none;
+            }
+            .icon{
+                width: 50px !important;
+                height: 50px !important;
+                margin-top: 20px;
+                margin-left: 0 !important;
+            }
+            h3, .price{
+                font-size: 14px !important;
+            }
+            p, .details{
+                font-size: 10px !important;
+            }
+            .details{
+                padding: 5px;
+            }
+        }
+    }
+    .mobile-card{
+        width: 300px;
+        height: 200px;
+        .icon{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 25px;
+        }
+        h3{
+            font-size: 16px;
+        }
+        p{
+            font-size: 10px;
+        }
+    }
+    .elect-categories{display: none;}
+    .dynamic-render{
+        margin: 10px 10px 10px 20px;
+        .back-track, .bread{
+            display: none !important;
+        }
+        .mob-anch{
+            img{
+                margin-right: 5px;
+            }
+            p{
+                margin-top: 10px;
+            }
+        }
+        .mobile_auth{
+            .nav-cart{
+                width: 24px;
+                height: 24px;
+            }
+            .user-nav{
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                margin-left: 5px;
+            }
+        }
+        .mobile-prod{
+            margin-top: 10px;
+        }
+        .arrow{
+            position: relative;
+            .dynamo{
+                width: 95%;
+                height: 120px;
+                margin-top: 30px;
+                background: #E9E9E9C2;
+                .dynamic-img{
+                    width: 100%;
+                    text-align: center !important;
+                    margin-top: 10px;
+                    img{
+                        width: 100px;
+                        height: 100px;
+                        margin: auto;
+                    }
+                }
+            }
+            .carousel-arrow{
+                position: absolute;
+                top: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 95%;
+                .arrow-but{
+                    border: none;
+                    color: #666481;
+                    height: 30px;
+                    width: 30px;
+                    background: none;
+                }
+            }
+        }
+        .dynamic-fav{
+            margin-top: 30px;
+            width: 95%;
+            margin-bottom: 67px;
+            .left-images{
+                img{
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 5px;
+                }
+            }
+            .dynamo-icon{
+                .dynamo-anchor{
+                    margin-right: 5px;
+                    text-decoration: none;
+                    color: $color-dark;
+                    font-size: 7px;
+                    text-align: center;
+                    .icon{
+                        padding: 3px;
+                        margin-right: 3px;
+                        border: 1px solid $color-dark;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .prod-details{
+            margin-bottom: 400px;
+            .prod-anchor{
+                .active{
+                    color: $primary-color;
+                }
+                button:hover{
+                    color: $primary-color;
+                    text-decoration: underline;
+                }
+                button{
+                    color: $forgot-text;
+                    background: none;
+                    border: none;
+                    // margin-right: 57px;
+                    text-decoration: none;
+                    font-family: Satoshi;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 12px;
+                }
+            }
+            .all-in-all{
+                margin-top: 20px;
+                .about-product{
+                    h2,h3{
+                        color: $forgot-text;
+                        font-family: Satoshi;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 12px;
+                    }
+                    .dynamo-about{
+                        color: $forgot-text;
+                        font-family: Satoshi;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 24px;
+                        letter-spacing: 0.15px;
+                    }
+                    .about-details{
+                        margin-top: 21px;
+                        p{
+                            color: $indicator;
+                            font-family: Satoshi;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: 24px;
+                            letter-spacing: 0.15px;
+                        }
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                    .disclaimer{
+                        margin-top: 48px;
+                        h4{
+                            color: $forgot-text;
+                            font-family: Satoshi;
+                            font-size: 18px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 24px;
+                            letter-spacing: 0.15px;
+                            margin-bottom: 0;
+                        }
+                        p{
+                            color: $indicator;
+                            font-family: Satoshi;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 24px;
+                            letter-spacing: 0.15px;
+                        }
+                        .manufacturer{
+                            color: $manu-button;
+                            text-align: center;
+                            font-family: Satoshi;
+                            font-size: 12px;
+                            padding: 10px 18px;
+                            border-radius: 40px;
+                            border: none;
+                            background: red;
+                            font-style: normal;
+                            font-weight: 900;
+                            line-height: 12px;
+                        }
+                    }
+                    
+                }
+            }
+            .specifications{
+                margin-top: 30px;
+                border-radius: 10px;
+                padding-left: 30px;
+                padding-top: 30px;
+                h2{
+                    margin-bottom: 32px;
+                    color: $forgot-text;
+                    font-family: Satoshi;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 21px;
+                }
+                p{
+                    color: $indicator;
+                    font-family: Satoshi;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 24px;
+                    letter-spacing: 0.15px;
+                }
+                span{
+                    font-weight: bold;
+                }
+            }
+            .about-product{
+                margin-top: 44px;
+                h2,h3{
+                    color: $forgot-text;
+                    font-family: Satoshi;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 21px;
+                }
+                .dynamo-about{
+                    color: $forgot-text;
+                    font-family: Satoshi;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px;
+                    letter-spacing: 0.15px;
+                }
+                .about-details{
+                    margin-top: 21px;
+                    p{
+                        color: $indicator;
+                        font-family: Satoshi;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 24px;
+                        letter-spacing: 0.15px;
+                    }
+                    span{
+                        font-weight: bold;
+                    }
+                }
+                .disclaimer{
+                    margin-top: 48px;
+                    h4{
+                        color: $forgot-text;
+                        font-family: Satoshi;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 14px;
+                        letter-spacing: 0.15px;
+                        margin-bottom: 0;
+                    }
+                    p{
+                        color: $indicator;
+                        font-family: Satoshi;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 24px;
+                        letter-spacing: 0.15px;
+                    }
+                    .manufacturer{
+                        margin-top: 20px;
+                        color: $manu-button;
+                        text-align: center;
+                        font-family: Satoshi;
+                        font-size: 12px;
+                        padding: 10px 18px;
+                        border-radius: 40px;
+                        border: none;
+                        background: red;
+                        font-style: normal;
+                        font-weight: 900;
+                        line-height: 21px;
+                    }
+                }
+                
+            }
+        }
+    }
+
+}
+@media only screen and (min-width: 600px) {
+    
+}
