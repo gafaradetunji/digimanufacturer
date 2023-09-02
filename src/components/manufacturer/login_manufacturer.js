@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import RegisterMobileNav from "../registerMobileNav"
 import axios from "axios"
 
-const loginURL = 'https://api.digi-rest.vercel.app/api/v1/auth/login'
+const loginURL = 'https://digi.mjobi.com/manufacturer/login/'
 
 const LoginManufacturer = () => {
   const navigate = useNavigate()
@@ -34,7 +34,8 @@ const LoginManufacturer = () => {
     
     if (values.password === '') {
       error.password = 'Password is required';
-    // } else {
+    } 
+    // else {
     //   if (!isContainsUppercase.test(values.password)) {
     //     error.password = 'Password must have at least one Uppercase Character.';
     //   }
@@ -44,7 +45,7 @@ const LoginManufacturer = () => {
     //   if (!isContainsNumber.test(values.password)) {
     //     error.password = 'Password must contain at least one Digit.';
     //   }
-    }
+    // }
     
     setFormError({ ...error });
     return Object.keys(error).length < 1;
@@ -52,6 +53,9 @@ const LoginManufacturer = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if(values.email === '' || values.password === ''){
+      return validateForm()
+    }
     console.log('Values', values)
     const isvalid = validateForm()
     const data = new FormData();
@@ -105,6 +109,7 @@ const LoginManufacturer = () => {
               </div>
                 <Link to='/forgotPass' className='forgot-pass no-underline text-[#df0000]'>Forget Password?</Link>
               <button className='form-control join bg-[#df0000]'>Log In</button>
+              <p className="mt-4 text-center">Don't have an account? <Link to="/registerman" className="text-[#df0000]">Sign Up</Link></p>
             </form>
             <footer className='reg-footer w-100 text-center mt-[100px] absolute bottom-0 '>© copyright 2023 Digi</footer>
         </main>
