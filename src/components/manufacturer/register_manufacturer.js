@@ -48,9 +48,6 @@ const RegisterManufacturer = () => {
       else if( !numberValidation.test(values.mobile_number)){
         error.mobile_number = 'Expecting Numbers only'
       }
-      else if(values.mobile_number.length !== 11){
-        error.mobile_number = 'Must be 11 Digits here'
-      }
       const isWhitespace = /^(?=.*\s)/;
       if (isWhitespace.test(values.password)) {
         error.password = 'Password must not contain Whitespaces.'
