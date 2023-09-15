@@ -25,16 +25,16 @@ const LoginManufacturer = () => {
     // const isContainsUppercase = /^(?=.*[A-Z])/;
     // const isContainsSymbol = /[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/g
     // const isContainsNumber = /^(?=.*[0-9])/;
-    
+
     if (values.email === '') {
       error.email = 'Email is required!';
     } else if (!emailValidation.test(values.email)) {
       error.email = 'Email is invalid!';
     }
-    
+
     if (values.password === '') {
       error.password = 'Password is required';
-    } 
+    }
     // else {
     //   if (!isContainsUppercase.test(values.password)) {
     //     error.password = 'Password must have at least one Uppercase Character.';
@@ -46,7 +46,7 @@ const LoginManufacturer = () => {
     //     error.password = 'Password must contain at least one Digit.';
     //   }
     // }
-    
+
     setFormError({ ...error });
     return Object.keys(error).length < 1;
   };
@@ -61,21 +61,21 @@ const LoginManufacturer = () => {
     const data = new FormData();
     data.append('email', values.email)
     data.append('password', values.password)
-    
+
     try{
       const response = await axios.post(loginURL, data)
       console.log(response)
-      const authToken = response.data.token;
+      const authToken = response.data.token.access;
       localStorage.setItem('authToken', authToken)
       console.log('Login successful');
       isvalid && navigate('/company')
       console.log('Message:', response);
-      console.log('Token:', response.data.token);
+      console.log('Token:', response.data.token.access);
     } catch (error) {
         console.error('Login Failed:', error);
     }
   };
-  
+
     return(
         <main className='h-[60rem] relative'>
           <RegisterNav />

@@ -1,110 +1,65 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
-import Select from 'react-select'
-import Logo from '../../images/image.jpg' 
+import Logo from '../../images/image.jpg'
 import Document from '../../images/document-upload.jpg'
 
 
 const EditManufacturerProduct = () => {
     const navigate = useNavigate()
     const [ values, setValues ] = useState({
-      location: '',
-      email: '',
-      number: '',
-      password: '',
-      confirmPassword: '',
+      title: '',
+      category: '',
+      size: '',
+      price:'',
+      countInStock:'',
+      available:'',
+      image: '',
+      description: ''
     })
-    const [ formError, setFormError ] = useState({})
-  
+
     const handleChange = e => {
       setValues(() => ({...values, [e.target.name]: e.target.value}))
     }
-  
-    const validateForm = () => {
-      const error = {}
-  
-      const emailValidation = /^[a-z0-9]+@(?:[a-z0-9]+\.)+[a-z]+$/
-      const numberValidation = /^[0-9]+/
-  
-      if (values.location === '') {
-        error.location = 'Location is required!'
-      }
-      if (values.email === '') {
-        error.email = 'Email is required!'
-      }
-      else if( !emailValidation.test(values.email)){
-        error.email = 'Email is invalid!'
-      }
-      if (values.number === '') {
-        error.number = 'Number is required!'
-      }
-      else if( !numberValidation.test(values.number)){
-        error.number = 'Expecting Numbers only'
-      }
-      else if(values.number.length !== 11){
-        error.number = 'Must be 11 Digits here'
-      }
-      const isWhitespace = /^(?=.*\s)/;
-      if (isWhitespace.test(values.password)) {
-        error.password = 'Password must not contain Whitespaces.'
-      }
-      const isContainsUppercase = /^(?=.*[A-Z])/;
-      if (!isContainsUppercase.test(values.password)) {
-        error.password = "Password must have at least one Uppercase Character.";
-      }
-      const isContainsLowercase = /^(?=.*[a-z])/;
-      if (!isContainsLowercase.test(values.password)) {
-        error.password = "Password must have at least one Lowercase Character.";
-      }
-      const isContainsNumber = /^(?=.*[0-9])/;
-      if (!isContainsNumber.test(values.password)) {
-        error.password = "Password must contain at least one Digit.";
-      }
-      const isContainsSymbol = /[-’/`~!#*$@_%+=.,^&(){}[\]|;:”<>?\\]/g
-      if (!isContainsSymbol.test(values.password)) {
-        error.password = "Password must contain at least one Special Symbol.";
-      }
-      if (values.password !== values.confirmPassword) {
-        error.confirmPassword = 'Password does not match'
-      }
-      setFormError({...error})
-  
-      return Object.keys(error).length < 1
-    }
-  
+
     const handleSubmit = async (e) => {
       e.preventDefault()
-      console.log('Values', values)
-      const isvalid = validateForm()
+      const token = localStorage.getItem('authToken')
+      if (token){
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       try{
-        const response = await axios.post('', 
+        const response = await axios.post('https://digi.mjobi.com/manufacturer/product/', config,
         {
-          email: values.email,
-          password: values.password //qwertyuiop1234$A
+          title: values.title,
+          category: values.category,
+          size: values.size,
+          price:values.price,
+          countInStock:values.countInStock,
+          available:values.available,
+          image: values.image,
+          description: values.description
         })
         if (response.status === 202) {
-          console.log('Login successful');
+          console.log('Product Added');
           console.log('Message:', response.data.message);
-          console.log('Token:', response.data.token);
-  
-          isvalid && navigate('/login')
-          console.log(isvalid)
+
         } else {
-          console.error('Login Failed:', response.status);
+          console.error('Failed:', response.status);
         }
       } catch (error) {
-        console.error('Login Failed:', error);
+        console.error('Failed:', error);
       }
-      isvalid && navigate('/verify-mail')
-      console.log(isvalid)
     }
-    const options = [
-      { value: 'Nigeria', label: 'Nigeria' },
-      { value: 'Usa', label: 'Usa' },
-      { value: 'United Kingdom', label: 'United Kingdom' }
-    ]
-  
+    else{
+      console.log('product not added an error occured')
+    }
+
+    }
+
     return(
         <main className='h-100 mt-[50px]'>
           <div className=''>
@@ -134,37 +89,31 @@ const EditManufacturerProduct = () => {
                 </div>
               </div>
               <div className='each-reg mb-2'>
-                <label className="form-label">Product Title</label>
-                <p className='error'>{formError.email}</p>
-                <input type='text' placeholder='Type In Your desired product name' name='email' className='form-control reg-input' value={values.email} onChange={handleChange}/>
+              <label className="form-label">Product Title</label>
+              <input type='text' placeholder='Title of your product' name='title' className='form-control reg-input' value={values.title} onChange={handleChange}/>
               </div>
               <div className='each-reg mb-2'>
-                <label className="form-label">Brand name</label>
-                <p className='error'>{formError.number}</p>
-                <input type='text' placeholder='Type In Your Phone Number' name='number' className='form-control reg-input' value={values.number} onChange={handleChange}/>
+                <label className="form-label">Product Category</label>
+                <input type='text' placeholder='Type In Your desired product category' name='category' className='form-control reg-input' value={values.category} onChange={handleChange}/>
               </div>
               <div className='each-reg mb-2'>
-                <label className="form-label">Category</label>
-                <p className='error'>{formError.location}</p>
-                <Select options={options} placeholder='Choose your location' className="w-[92%] text-[12px] text-[#2D2B4A] ml-3 rounded-md"/>
+                <label className="form-label">Size</label>
+                <input type='text' placeholder='Size' name='size' className='form-control reg-input' value={values.size} onChange={handleChange}/>
               </div>
               <div className='each-reg mb-2'>
                 <label className="form-label">Sub Category</label>
-                <p className='error'>{formError.location}</p>
-                <Select options={options} placeholder='Choose your location' className="w-[92%] text-[12px] text-[#2D2B4A] ml-3 rounded-md"/>
+                <input type='text' placeholder='price' name='price' className='form-control reg-input' value={values.price} onChange={handleChange}/>
               </div>
               <div className='each-reg mb-2'>
                 <label className="form-label">Unit Available</label>
-                <p className='error'>{formError.confirmPassword}</p>
-                <input type='password' placeholder='Repeat Password Typed' name='confirmPassword' className='form-control reg-input' value={values.confirmPassword} onChange={handleChange}/>
+                <input type='text' placeholder='Unit available' name='available' className='form-control reg-input' value={values.available} onChange={handleChange}/>
               </div>
               <div className='each-reg mb-2'>
-                <label className="form-label">Add product Image</label>
-                <p className='error'>{formError.location}</p>
-                <textarea className='border-2 w-[95%] h-[100px] lg:h-[215px]'></textarea>
+                <label className="form-label">Add product Description</label>
+                <textarea className='border-2 w-[95%] h-[100px] lg:h-[215px]' name='description'onChange={handleChange} value={values.description}></textarea>
               </div>
               <div className='each-reg mb-2'>
-                <label className="form-label">Product Description</label>
+                <label className="form-label">Product Image</label>
                 <div className="flex items-center gap-x-8">
                     <img class="h-16 w-16 object-cover" src={Logo} alt="Current profile " />
                     <img class="h-6 w-6 object-cover" src={Document} alt="" />
@@ -182,10 +131,8 @@ const EditManufacturerProduct = () => {
                 </div>
                 <div className='each-reg mb-2'>
                 <label className="form-label">Certification and compliance</label>
-                <p className='error'>{formError.location}</p>
-                <Select options={options} placeholder='Choose your location' className="w-[92%] text-[12px] text-[#2D2B4A] ml-3 rounded-md"/>
               </div>
-              <button className='form-control join' onClick={() => {navigate('/shipping')}}>continue</button>
+              <button className='form-control join' onClick={() => {navigate('/manufacturerProduct')}}>continue</button>
             </form>
             <footer className='reg-footer w-100 text-center mt-[100px]'>© copyright 2023 Digi</footer>
         </main>
