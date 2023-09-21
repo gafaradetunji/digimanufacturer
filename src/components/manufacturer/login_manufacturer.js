@@ -64,9 +64,10 @@ const LoginManufacturer = () => {
 
     try{
       const response = await axios.post(loginURL, data)
-      console.log(response)
+      console.log(response.data)
       const authToken = response.data.token.access;
       localStorage.setItem('authToken', authToken)
+      console.log('Token:', authToken)
       console.log('Login successful');
       isvalid && navigate('/company')
       console.log('Message:', response);

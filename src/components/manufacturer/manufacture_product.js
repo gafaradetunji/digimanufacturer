@@ -3,7 +3,8 @@ import '../../scss/app.scss'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const prductUrl = 'https://digi.mjobi.com/manufacturer/product/'
+const baseURL = 'https://digi.mjobi.com'
+const prductUrl = `${baseURL}/manufacturer/product/`
 const ManufacutrerProduct = () => {
     const navigate = useNavigate()
 
@@ -11,10 +12,11 @@ const ManufacutrerProduct = () => {
 
     useEffect(() => {
       const token = localStorage.getItem('authToken')
+      console.log('manutoken', token)
       if(token){
         const config = {
           headers: {
-            Authorization: `Bearer ${token}`,
+            Authorization: `${token}`,
           },
         }
         axios.get(prductUrl, config)

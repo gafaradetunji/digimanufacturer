@@ -107,18 +107,18 @@ const RegisterManufacturer = () => {
           },
         });
     
-        if (response.status === 202) {
+        if (response.status === 201) {
           console.log('Login successful');
           console.log('Message:', response.data.message);
           console.log('Token:', response.data.token);
     
-          isvalid && navigate('/');
+          !isvalid && navigate('/');
           console.log(isvalid);
         } else {
           console.error('Login Failed:', response.status);
         }
       } catch (error) {
-        console.error('Login Failed:', error);
+        console.error('error Failed:', error.message);
       }
     }    
   
