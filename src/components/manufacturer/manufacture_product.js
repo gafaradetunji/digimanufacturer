@@ -16,7 +16,7 @@ const ManufacutrerProduct = () => {
       if(token){
         const config = {
           headers: {
-            Authorization: `${token}`,
+            Authorization: `Bearer ${token}`,
           },
         }
         axios.get(prductUrl, config)
@@ -33,18 +33,6 @@ const ManufacutrerProduct = () => {
           }
     }, [])
 
-    // const manufacturerProduct = [
-    //     { id: 1, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 2, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 3, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 4, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 5, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 6, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 7, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 8, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 9, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    //     { id: 10, productName: '100kVA Generator for industrial use', dateCreated: '23rd - March - 2000', status: 'active', published: 'yes', unit: 25},
-    // ]
 
     return(
         <main className='relative h-[1200px] manpro'>
